@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="https://code.jquery.com/jquery-3.1.1.js"
+            integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+            crossorigin="anonymous"></script>
+    <script src="countdown.js"></script>
+</head>
+<body>
+    <div id="getting-started" style="position:fixed; bottom:0px; right:0px;padding:20px;background-color:yellow; color:red; font-weight:bold"></div>
+    <div style="min-height: 700px">
+        <p>jhsvjhsvhvvk</p>
+    </div>
+    <script type="text/javascript">
+        var currentDate = new Date();
+        var secondQuantity = 60;
+        var twoMinLater = new Date(currentDate.getTime() + (secondQuantity*1000));
+        $("#getting-started")
+        .countdown(twoMinLater, function (event) {
+            $(this).text(
+              event.strftime('%M:%S')
+            );
+        }).on('finish.countdown', function () { // go to documentation at this link for more event: http://hilios.github.io/jQuery.countdown/documentation.html
+            alert('het gio'); // function here
+        });
+    </script>
+</body>
+</html>
